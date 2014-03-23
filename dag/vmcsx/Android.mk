@@ -1,4 +1,3 @@
-
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -35,7 +34,7 @@ LOCAL_C_INCLUDES += $(VMCSX_DIR)
 LOCAL_C_INCLUDES += $(VMCSX_DIR)/helpers/vc_image
 LOCAL_C_INCLUDES += $(VMCSX_DIR)/interface/vcos/pthreads
 #LOCAL_C_INCLUDES += frameworks/base/opengl/include
-LOCAL_C_INCLUDES += hardware/libhardware/modules/gralloc
+LOCAL_C_INCLUDES += device/samsung/bcm21553-common/libgralloc
 LOCAL_C_INCLUDES += $(VMCSX_DIR)/../v3d_library/inc
 LOCAL_C_INCLUDES += $(VMCSX_DIR)/../v3d_library/src
 LOCAL_C_INCLUDES += $(VMCSX_DIR)/interface/khronos/include
