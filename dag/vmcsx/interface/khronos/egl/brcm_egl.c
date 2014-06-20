@@ -88,7 +88,7 @@ EGLContext eglCreateContext(EGLDisplay display, EGLConfig config, EGLContext sha
     {
         struct context *context = (struct context *)malloc(sizeof(struct context));
         int i;
-        LOGD("eglCreateContext() context: %p, VC context %d, Thread %d", context, (int)context_int, gettid());
+        LOGV("eglCreateContext() context: %p, VC context %d, Thread %d", context, (int)context_int, gettid());
         context->context = context_int;
         context->read = 0;
         context->draw = 0;
@@ -131,7 +131,7 @@ EGLBoolean eglDestroyContext(EGLDisplay display, EGLContext context_)
       }
 
        //Also, don't we need to check if the context is active or not?
-      LOGD("eglDestroyContext() context: %p, VC context: %d, Thread %d", context, (int)context->context, gettid());
+      LOGV("eglDestroyContext() context: %p, VC context: %d, Thread %d", context, (int)context->context, gettid());
       EGLBoolean ret = eglDestroyContext_Int(display, context->context);
       release_composer(context->composer);
 	  context->composer = NULL;
@@ -161,7 +161,7 @@ EGLBoolean eglMakeCurrent(EGLDisplay display, EGLSurface draw, EGLSurface read, 
         eglMakeCurrent_Int(display, draw, read, context);
 
         current->made_current = 0;
-        LOGD("eglMakeCurrent(NULL) Thread: %d", gettid());
+        LOGV("eglMakeCurrent(NULL) Thread: %d", gettid());
         return EGL_TRUE;
     }
     //is the context being setup? check all fields
@@ -186,7 +186,7 @@ EGLBoolean eglMakeCurrent(EGLDisplay display, EGLSurface draw, EGLSurface read, 
         }
         else
         {
-            LOGD("eglMakeCurrent(%p, %p, %p) Thread: %d", context, draw, read, gettid());
+            LOGV("eglMakeCurrent(%p, %p, %p) Thread: %d", context, draw, read, gettid());
         }
 
         //TODO - we ignore the context error code and go ahead with the following anyway
@@ -305,7 +305,7 @@ EGLSurface eglCreateWindowSurface(  EGLDisplay display,
          //send back the surface
          surface = (EGLSurface)surface_ptr;
 
-         LOGD("eglCreateWindowSurface() surface: %p, VC surface: %d, Thread: %d", surface, (int)surface_int, gettid());
+         LOGV("eglCreateWindowSurface() surface: %p, VC surface: %d, Thread: %d", surface, (int)surface_int, gettid());
       }
       else
       {
@@ -314,7 +314,7 @@ EGLSurface eglCreateWindowSurface(  EGLDisplay display,
       }
    }
    else
-      LOGD("eglCreateWindowSurface() surface: %p, Thread: %d", surface, gettid());
+      LOGV("eglCreateWindowSurface() surface: %p, Thread: %d", surface, gettid());
 
    return surface;
 }
@@ -372,7 +372,7 @@ EGLBoolean eglDestroySurface(EGLDisplay display, EGLSurface surface_)
 
         if(surface->window)
         {
-            LOGD("eglDestroySurface() surface: %p, android window %p, Thread: %d", surface, surface->window, gettid());
+            LOGV("eglDestroySurface() surface: %p, android window %p, Thread: %d", surface, surface->window, gettid());
             android_native_window_t *window = surface->window;
             android_native_buffer_t *buffer = surface->buffer;
 
