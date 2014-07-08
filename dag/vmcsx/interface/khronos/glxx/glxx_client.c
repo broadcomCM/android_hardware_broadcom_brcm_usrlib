@@ -2542,7 +2542,7 @@ GL_API const GLubyte * GL_APIENTRY glGetString (GLenum name)
       case GL_VERSION:
          return (const GLubyte *)"OpenGL ES-CM 1.1";
       case GL_EXTENSIONS:
-         return (const GLubyte *)"GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_texture_npot GL_OES_EGL_image GL_OES_query_matrix GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_depth24 GL_OES_depth32 GL_OES_stencil8 GL_OES_draw_texture";  /*TODO is npot right? I can't find it in glext.h */
+         return (const GLubyte *)"GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_EGL_image GL_OES_query_matrix GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_depth24 GL_OES_depth32 GL_OES_stencil8 GL_OES_draw_texture";  /*TODO is npot right? I can't find it in glext.h */
       default:
          set_error(state, GL_INVALID_ENUM);
          return NULL;
@@ -2568,7 +2568,7 @@ GL_API const GLubyte * GL_APIENTRY glGetString (GLenum name)
       case GL_SHADING_LANGUAGE_VERSION:
          return (const GLubyte *)"OpenGL ES GLSL ES 1.00";
       case GL_EXTENSIONS:
-         return (const GLubyte *)"GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_texture_npot GL_OES_depth24 GL_OES_vertex_half_float GL_OES_EGL_image GL_OES_rgb8_rgba8 GL_OES_depth32";
+         return (const GLubyte *)"GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_depth24 GL_OES_vertex_half_float GL_OES_EGL_image GL_OES_rgb8_rgba8 GL_OES_depth32";
       default:
          set_error(state, GL_INVALID_ENUM);
          return NULL;
