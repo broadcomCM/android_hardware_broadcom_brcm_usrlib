@@ -128,6 +128,7 @@ EGLBoolean eglDestroyContext(EGLDisplay display, EGLContext context_)
          //the context is still current according to the spec - do nothing
          //TODO - deal with this case
          LOGD("eglDestroyContext() FATAL error - the context is still active but we called destroy - FIX THIS");
+         return EGL_TRUE;
       }
 
        //Also, don't we need to check if the context is active or not?
