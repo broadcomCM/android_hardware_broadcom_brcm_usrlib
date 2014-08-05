@@ -2956,7 +2956,7 @@ void glDiscardFramebufferEXT_impl(GLenum target, GLsizei numAttachments, const G
       }
       
       if (!err)
-         glxx_hw_invalidate_frame(state, false, ds, ds, color);
+         glxx_hw_invalidate_frame(state, valid_frame_buffer(state) ? false : color, ds, ds, color);
    }
 
    GLXX_UNLOCK_SERVER_STATE();
