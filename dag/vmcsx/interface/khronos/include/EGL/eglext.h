@@ -173,6 +173,10 @@ typedef khronos_utime_nanoseconds_t EGLTimeKHR;
 #define EGL_ANDROID_recordable 1
 #define EGL_RECORDABLE_ANDROID                  0x3142  /* EGLConfig attribute */
 #endif
+#ifndef EGL_ANDROID_framebuffer_target
+#define EGL_ANDROID_framebuffer_target   1
+#define EGL_FRAMEBUFFER_TARGET_ANDROID          0x3147
+#endif
 
 #ifdef EGL_EGLEXT_PROTOTYPES
 EGLAPI EGLSyncKHR EGLAPIENTRY eglCreateSyncKHR(EGLDisplay dpy, EGLenum type, const EGLint *attrib_list);
